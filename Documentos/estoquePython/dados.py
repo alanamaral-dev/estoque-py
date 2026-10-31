@@ -1,4 +1,6 @@
 estoque = []
+registroDeVendas = []
+caixa = 0
 
 import json
 import os
@@ -16,3 +18,4 @@ def salvar():
         json.dump(estoque, f, ensure_ascii=False, indent=4)
 
 estoque = carregar()
+caixa = carregar()
