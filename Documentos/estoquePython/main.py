@@ -4,14 +4,17 @@ import menu_funções
 
 menu()
 
+#GUARDA A FUNÇÃO QUE O USUARIO ESCOLHER ULTILIZAR3
 func = int(input('Qual função deseja usar: '))
 
 while func != 0:
 
+    #MOSTRA O MENU PRINCIPAL DE FUNÇÕES
     if func == 9:
         menu()
         func = int(input('Qual função deseja usar: '))
 
+    #REALIZA CADASTROS E ATUALIZAÇÕES DE PRODUTOS
     if func == 1:
         menu_funções.cadastro()
         enter = input('[Aperte enter para voltar ao menu:] ')
@@ -19,6 +22,7 @@ while func != 0:
         if enter == '':
             func = 9
 
+    #REMOVE PRODUTOS CADASTRADOS
     elif func == 2:
         menu_funções.remover()
         enter = input('[Aperte enter para voltar ao menu:] ')
@@ -26,6 +30,7 @@ while func != 0:
         if enter == '':
             func = 9
 
+    #MOSTRA UMA TABELA COM TODOS OS PRODUTOS CADASTRADOS
     elif func == 3:
         menu_funções.lista()
         menuEstoque = input('[Deseja acessar o menu de estoque? [s/n]: ').strip().upper()
@@ -36,12 +41,14 @@ while func != 0:
             if enter == '':
                 func = 9
                 
-    
+
+        #MOSTRA O MENU DE TABELA PARA REALIZAR SELECTS MAIS PRECISOS DE PRODUTOS
         while menuEstoque == 'S':
             menu_estoque()
             funcEstoque = int(input('Qual função deseja usar: '))
 
 
+            #SOMA O VALOR TOTAL DO ESTOQUE
             if funcEstoque == 1:
                 print(f'{'='*39}')
                 menu_funções.somaEstoque()
@@ -49,7 +56,7 @@ while func != 0:
                 if enter == '':
                     menuEstoque = 'S'
 
-                    
+            #SEPARA OS PRODUTOS POR DETERMINADA FAIXA DE PREÇO
             elif funcEstoque == 2:
                 print(f'{'='*39}')
                 menu_funções.separarPreco()
@@ -57,7 +64,7 @@ while func != 0:
                 if enter == '':
                     menuEstoque = 'S'
 
-
+            #SEPARA OS PRODUTOS POR QUANTIDADESA
             elif funcEstoque == 3:
                 print(f'{'='*39}')
                 menu_funções.separarQuantidade()
@@ -66,6 +73,7 @@ while func != 0:
                     menuEstoque = 'S'
 
 
+            #USADO PARA PESQUISAR UM PRODUTO DENTRO DOS JA CADASTRADOS
             elif funcEstoque == 4:
                 print(f'{'='*39}')
                 menu_funções.pesquisar()
@@ -73,7 +81,7 @@ while func != 0:
                 if enter == '':
                     menuEstoque = 'S'
 
-
+            #FECHA O PROGRAMA
             elif funcEstoque == 0:
                 func = 9
                 menuEstoque = 'N'

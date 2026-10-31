@@ -1,42 +1,20 @@
 [
     {
+        "Id": 1,
         "Produto": "Monster",
-        "Preço": 9.9,
-        "Quantidade": 25
+        "Preço": 10.99,
+        "Quantidade": 20
     },
     {
+        "Id": 2,
         "Produto": "RedBull",
-        "Preço": 10.9,
-        "Quantidade": 35
+        "Preço": 11.9,
+        "Quantidade": 20
     },
     {
-        "Produto": "Bally",
-        "Preço": 7.0,
-        "Quantidade": 40
-    },
-    {
+        "Id": 3,
         "Produto": "Coca-Cola",
         "Preço": 4.5,
-        "Quantidade": 50
-    },
-    {
-        "Produto": "Guaraná",
-        "Preço": 4.5,
         "Quantidade": 30
-    },
-    {
-        "Produto": "Guaraná Jesus",
-        "Preço": 5.0,
-        "Quantidade": 56
-    },
-    {
-        "Produto": "Sprite",
-        "Preço": 12.5,
-        "Quantidade": 38
-    },
-    {
-        "Produto": "Toddynho",
-        "Preço": 3.5,
-        "Quantidade": 48
     }
 ]
