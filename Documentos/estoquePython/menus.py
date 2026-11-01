@@ -21,3 +21,11 @@ def menu_estoque():
     print(f'{'='*39}')
     print(f'{'[0] ':-<31}> Voltar')
     print(f'{'='*39}')
+
+def menuVendas():
+    print(f'================ Vendas ===============') 
+    print(f'{'[1] ':-<23}> Realizar Venda')
+    print(f'{'[2] ':-<19}> Registro de Vendas')
+    print(f'{'[3] ':-<23}> Saldo em Caixa')
+    print(f'{'[0] ':-<31}> Voltar')
+
