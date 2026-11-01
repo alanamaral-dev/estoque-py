@@ -89,7 +89,6 @@ while func != 0:
 
     #ACESSA SESSÃO DE VENDAS
     elif func == 4:
-        menuVendas()
         funcVendas = -1
 
         while funcVendas != 0:
@@ -109,6 +108,7 @@ while func != 0:
             #MOSTRA O REGISTRO DAS VENDAS
             elif funcVendas == 2:
                 menu_funções.registroDeVenda()
+                print(f'{'='*39}')
 
                 enter = input('[Aperte enter para voltar ao menu] ')
                 

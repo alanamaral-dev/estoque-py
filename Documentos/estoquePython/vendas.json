@@ -1,17 +1,1 @@
-[
-    {
-        "Produto": "Monster",
-        "Quantidade": 10,
-        "Preço": 109.0
-    },
-    {
-        "Produto": "Monster",
-        "Quantidade": 7,
-        "Preço": 76.3
-    },
-    {
-        "Produto": "RedBull",
-        "Quantidade": 6,
-        "Preço": 147.7
-    }
-]
+[]

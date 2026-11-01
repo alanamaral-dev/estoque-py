@@ -22,6 +22,7 @@ def menu_estoque():
     print(f'{'[0] ':-<31}> Voltar')
     print(f'{'='*39}')
 
+#MENU DA FUNÇÃO DE VENDAS
 def menuVendas():
     print(f'================ Vendas ===============') 
     print(f'{'[1] ':-<23}> Realizar Venda')

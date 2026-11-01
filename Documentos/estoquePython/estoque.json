@@ -1,14 +1,1 @@
-[
-    {
-        "Id": 1,
-        "Produto": "Monster",
-        "Preço": 10.9,
-        "Quantidade": 33
-    },
-    {
-        "Id": 2,
-        "Produto": "RedBull",
-        "Preço": 11.9,
-        "Quantidade": 39
-    }
-]
+[]
