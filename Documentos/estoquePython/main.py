@@ -1,5 +1,6 @@
 from menus import menu
 from menus import menu_estoque
+from menus import menuVendas
 import menu_funções
 
 menu()
@@ -85,6 +86,47 @@ while func != 0:
             elif funcEstoque == 0:
                 func = 9
                 menuEstoque = 'N'
+
+    #ACESSA SESSÃO DE VENDAS
+    elif func == 4:
+        menuVendas()
+        funcVendas = -1
+
+        while funcVendas != 0:
+            menuVendas()
+            print(f'{'='*39}')
+            funcVendas = int(input('Qual função deseja utilizar: '))
+
+            #REALIZA VENDAS
+            if funcVendas == 1:
+                menu_funções.vender()
+            
+                enter = input('[Aperte enter para voltar ao menu] ')
+                
+                if enter == '':
+                    func = 9
+
+            #MOSTRA O REGISTRO DAS VENDAS
+            elif funcVendas == 2:
+                menu_funções.registroDeVenda()
+
+                enter = input('[Aperte enter para voltar ao menu] ')
+                
+                if enter == '':
+                    func = 9
+
+            #MOSTRA O SALDO EM CAIXA
+            elif funcVendas == 3:
+                menu_funções.conferirCaixa()
+
+                enter = input('[Aperte enter para voltar ao menu] ')
+                
+                if enter == '':
+                    func = 9
+
+            #VOLTA AO MENU PRINCIPAL
+            if funcVendas == 0:
+                func = 9
 
     elif func == 0:
         break

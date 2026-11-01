@@ -1,4 +1,4 @@
-from dados import estoque, salvar, caixa, registroDeVendas
+from dados import estoque, salvar, caixa, registroDeVendas, salvar_caixa, ARQUIVO_ESTOQUE, ARQUIVO_VENDAS
 
 '''==============================================================================
 =============================FUNÇÕES DO MENU=====================================
@@ -35,7 +35,7 @@ def cadastro():
 
         print('[Produto Cadastrado.]')
 
-    salvar()
+    salvar(estoque, ARQUIVO_ESTOQUE)
 
 
 #FUNÇÃO DE REMOÇÃO
@@ -46,7 +46,7 @@ def remover():
         if item['Id'] == id:
             estoque.remove(item)
             print('Produto Removido.')
-            salvar()
+            salvar(estoque, ARQUIVO_ESTOQUE)
             break
     else:
         print('Produto Não Encontrado.')
@@ -161,41 +161,54 @@ def pesquisar():
 
 def vender():
 
-    registro = -1
+    global caixa
+    registro = 1
     vendas = []
+    preço = []
 
     while registro != 0:
-
-        venda = input('Digite o ID do produto a ser vendido [0 Para parar de registrar]: ').strip()
+        print(f'{'='*39}')
+        venda = int(input('Digite o ID do produto a ser vendido: '))
         quantidade = int(input('Digite a quantidade desse produto a ser vendido: '))
-        preço = []
+        print(f'{'='*39}')
+
         vendas.append(venda)
 
-        for id in vendas:
-            for i in range (len(estoque)):
-                if estoque[i]['Id'] == id:
-                    estoque[i]['Quantidade'] -= quantidade
-                    preço.append(estoque[i]['Preço'] * quantidade)
+        for i in range (len(estoque)):
+            if estoque[i]['Id'] == venda:
+                estoque[i]['Quantidade'] -= quantidade
+                preço.append(estoque[i]['Preço'] * quantidade)
 
-                    print(f'Venda realizada, preço total: {sum(preço)}')
+                print(f'Venda realizada, preço total: [{sum(preço):.2f}]')
+                print(f'{'='*39}')
 
-                    caixa += sum(preço)
-                    
-                    registroDeVendas.append({
-                        estoque[i]['Produto'], 
-                        quantidade,
-                        sum(preço)
-                    })
+                caixa += sum(preço)
+                
+                registroDeVendas.append({
+                    'Produto': estoque[i]['Produto'],
+                    'Quantidade': quantidade,
+                    'Preço': sum(preço)
+                })
 
-                    salvar()
 
+        cont = input('Deseja realizar outra venda? [s/n]: ').upper()
+        if cont == 'N':
+            registro = 0
+
+    salvar(estoque, ARQUIVO_ESTOQUE)
+    salvar(registroDeVendas, ARQUIVO_VENDAS)
+    salvar_caixa(caixa)
 
 def registroDeVenda():
-
+    print('='*37)
+    print(f'{' REGISTROS DE VENDAS ':=^37}')
+    print('='*37)
+    print(f'{'|Produto':.<19.19}|{'Qtd':.>8.8}|{'Preço|':.>8.8}')
+    print('='*37)
     for i in range (len(registroDeVendas)):
-        print(f'{registroDeVendas[i]}')
+        print(f'|{registroDeVendas[i]['Produto']:.<18.18}|{registroDeVendas[i]['Quantidade']:.>8}|{registroDeVendas[i]['Preço']:.>7.7}|')
 
 
 def conferirCaixa():
 
-    print(f'Valor total em caixa: {caixa}')
+    print(f'Valor total em caixa: {caixa:.2f}')

@@ -2,19 +2,13 @@
     {
         "Id": 1,
         "Produto": "Monster",
-        "Preço": 10.99,
-        "Quantidade": 20
+        "Preço": 10.9,
+        "Quantidade": 33
     },
     {
         "Id": 2,
         "Produto": "RedBull",
         "Preço": 11.9,
-        "Quantidade": 20
-    },
-    {
-        "Id": 3,
-        "Produto": "Coca-Cola",
-        "Preço": 4.5,
-        "Quantidade": 30
+        "Quantidade": 39
     }
 ]
